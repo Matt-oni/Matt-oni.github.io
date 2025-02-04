@@ -1,13 +1,20 @@
+:root {
+  --colore-primario: #1B263B;
+  --colore-secondario: #415A77;
+  --colore-accento: #0DAB76;
+  --colore-sfondo: #E0E1DD;
+}
+
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: var(--colore-sfondo);
+  color: var(--colore-primario);
 }
 
 header {
-  background-color: #222;
+  background-color: var(--colore-primario);
   color: #fff;
   padding: 1rem;
 }
@@ -20,8 +27,12 @@ nav ul {
 }
 
 nav a {
-  color: #fff;
+  color: var(--colore-sfondo);
   text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--colore-accento);
 }
 
 section {
