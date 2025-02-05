@@ -8,18 +8,27 @@
   <link rel="stylesheet" href="asset/css/styles.css">
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#progetti">Progetti</a></li>
-        <li><a href="#about">Chi sono</a></li>
-        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#contact">Contacts</a></li>
       </ul>
     </nav>
   </header>
 
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hi, i'm Matteo!</h1>
+      <p>Game Programmer passionate about development and gameplay mechanics.</p>
+      <a href="#projects" class="btn">Check out my projects</a>
+    </div>
+  </section>
+  
   <!-- Sezione Home -->
   <section id="home">
     <h1>Ciao, sono Matteo Simoni</h1>
@@ -28,15 +37,23 @@
   </section>
 
   <!-- Sezione Progetti -->
-  <section id="progetti">
-    <h2>I miei progetti</h2>
-    <div class="progetto">
-      <img src="assets/img/progetto1-thumbnail.jpg" alt="Progetto 1">
-      <h3>Nome Progetto 1</h3>
-      <p>Breve descrizione del progetto e delle tecnologie usate.</p>
-      <a href="link-al-repository-o-demo">Guarda il progetto</a>
+  <section id="projects">
+    <h2>I miei Progetti</h2>
+    <div class="project-container">
+      <div class="project-card">
+        <img src="assets/img/progetto1-thumbnail.jpg" alt="Progetto 1">
+        <h3>Nome Progetto 1</h3>
+        <p>Breve descrizione del progetto...</p>
+        <a href="link-al-progetto" class="btn">Scopri di più</a>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/img/progetto2-thumbnail.jpg" alt="Progetto 2">
+        <h3>Nome Progetto 2</h3>
+        <p>Breve descrizione del progetto...</p>
+        <a href="link-al-progetto" class="btn">Scopri di più</a>
+      </div>
     </div>
-    <!-- Ripeti per altri progetti -->
   </section>
 
   <!-- Sezione Chi sono -->
@@ -47,10 +64,14 @@
   </section>
 
   <!-- Sezione Contatti -->
-  <section id="contatti">
+  <section id="contact">
     <h2>Contattami</h2>
-    <p>Email: <a href="mailto:tuoemail@example.com">tuoemail@example.com</a></p>
-    <!-- Link a LinkedIn, GitHub, ecc. -->
+    <form action="https://formspree.io/f/mjvzwgyd" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn">Invia</button>
+    </form>
   </section>
 
   <!-- Footer -->
