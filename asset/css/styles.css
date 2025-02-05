@@ -71,6 +71,25 @@ section {
   color: white;
 }
 
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--colore-accento);
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#theme-toggle:hover {
+  background: #088c61;
+  transform: scale(1.1);
+}
+
+
 /* Hero Section */
 .hero {
   height: 100vh;
