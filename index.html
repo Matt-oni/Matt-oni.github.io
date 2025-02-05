@@ -17,8 +17,12 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About me</a></li>
         <li><a href="#contact">Contacts</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li><button id="theme-toggle">🌙</button></li>
       </ul>
-      <button id="theme-toggle">🌙</button>
+      
     </nav>
   </header>
 
@@ -113,16 +117,16 @@
 
       function typeWriter() {
         if (i < text.length) {
-          typingElement.innerHTML += text.charAt(i);
+          typingElement.textContent += text.charAt(i); // Use textContent instead of innerHTML to avoid duplication
           i++;
           setTimeout(typeWriter, 100);
         } else {
-          typingElement.innerHTML += '<span class="cursor">|</span>';
+          typingElement.innerHTML += '<span class="cursor">|</span>'; // Add the blinking cursor
         }
       }
 
-      // Reset del testo prima di iniziare
-      typingElement.innerHTML = "";
+      // Ensure the text is empty before starting
+      typingElement.textContent = "";
       typeWriter();
     });
   </script>

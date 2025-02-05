@@ -110,6 +110,19 @@ section {
   background-color: #088c61;
 }
 
+/* Cursor che blinka alla fina dell'Hero */
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 /* Sezione Progetti */
 #projects {
   text-align: center;
@@ -212,15 +225,4 @@ footer {
   color: #fff;
 }
 
-/* Cursore modificato */
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 0.8s infinite;
-}
 
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
