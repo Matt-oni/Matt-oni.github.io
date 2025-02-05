@@ -75,6 +75,8 @@ section {
   position: fixed;
   top: 20px;
   right: 20px;
+  width: 50px;  /* Imposta una larghezza fissa */
+  height: 50px; /* Imposta un'altezza fissa */
   background: var(--colore-accento);
   border: none;
   font-size: 1.2rem;
@@ -82,6 +84,10 @@ section {
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #theme-toggle:hover {
@@ -127,6 +133,19 @@ section {
 
 .btn:hover {
   background-color: #088c61;
+}
+
+/* Particles effect BG*/
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 /* Cursor che blinka alla fina dell'Hero */

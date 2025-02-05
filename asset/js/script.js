@@ -5,22 +5,42 @@ themeToggle.addEventListener("click", () => {
 });
 
 /* Typing Hero */
-document.addEventListener("DOMContentLoaded", function () {
-    const text = "Hello friend, I'm Matteo.";
-    const typingElement = document.getElementById("typing-text");
-    let i = 0;
+const texts = [
+    "Hello friend, I'm Matteo.",
+    "I'm a passionate Game Programmer.",
+    "I love creating immersive gameplay experiences."
+];
 
-    function typeWriter() {
-        if (i < text.length) {
-            typingElement.textContent += text.charAt(i); // Use textContent instead of innerHTML to avoid duplication
-            i++;
-            setTimeout(typeWriter, 100);
-        } else {
-            typingElement.innerHTML += '<span class="cursor">|</span>'; // Add the blinking cursor
-        }
+let textIndex = 0;
+let charIndex = 0;
+const typingElement = document.getElementById("typing-text");
+
+function typeWriter() {
+    if (charIndex < texts[textIndex].length) {
+        typingElement.innerHTML = texts[textIndex].substring(0, charIndex + 1) + '<span class="cursor">|</span>';
+        charIndex++;
+        setTimeout(typeWriter, 100);
+    } else {
+        setTimeout(() => {
+            charIndex = 0;
+            textIndex = (textIndex + 1) % texts.length;
+            typeWriter();
+        }, 2000);
     }
+}
 
-    // Ensure the text is empty before starting
-    typingElement.textContent = "";
-    typeWriter();
+document.addEventListener("DOMContentLoaded", typeWriter);
+
+/* Particles effect BG*/
+particlesJS("particles-js", {
+    particles: {
+        number: { value: 80 },
+        shape: { type: "circle" },
+        size: { value: 3 },
+        move: { speed: 2 },
+        line_linked: { enable: true, opacity: 0.5 },
+    },
+    interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" } },
+    },
 });
