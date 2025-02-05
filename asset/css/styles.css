@@ -62,6 +62,15 @@ section {
   max-width: 1200px;
 }
 
+/* Dark Mode */
+.dark-mode {
+  --colore-primario: #121212;
+  --colore-secondario: #1E1E1E;
+  --colore-sfondo: #252525;
+  --colore-accento: #0DAB76;
+  color: white;
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -118,20 +127,27 @@ section {
   background: white;
   width: 300px;
   padding: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
   width: 100%;
   border-radius: 5px;
+  transition: transform 0.3s ease;
 }
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
 
 /* Sezione Contatti */
 #contact {
@@ -158,9 +174,53 @@ button {
   width: 100%;
 }
 
+/* Social Icons */
+.social-icons {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--colore-accento);
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Animazioni Scrolling */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
   background-color: #222;
   color: #fff;
+}
+
+/* Cursore modificato */
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
