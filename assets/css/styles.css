@@ -141,17 +141,16 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
 }
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
-/* Cursor che blinka alla fina dell'Hero */
+/* Cursor che blinka alla fine dell'Hero */
 .cursor {
   display: inline-block;
-  margin-left: 2px;
   animation: blink 0.8s infinite;
 }
 

@@ -29,18 +29,21 @@ function typeWriter() {
     }
 }
 
+
 document.addEventListener("DOMContentLoaded", typeWriter);
 
 /* Particles effect BG*/
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 80 },
-        shape: { type: "circle" },
-        size: { value: 3 },
-        move: { speed: 2 },
-        line_linked: { enable: true, opacity: 0.5 },
-    },
-    interactivity: {
-        events: { onhover: { enable: true, mode: "repulse" } },
-    },
+document.addEventListener("DOMContentLoaded", function () {
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 80 },
+            shape: { type: "circle" },
+            size: { value: 3 },
+            move: { speed: 2 },
+            line_linked: { enable: true, opacity: 0.5 },
+        },
+        interactivity: {
+            events: { onhover: { enable: true, mode: "repulse" } },
+        },
+    });
 });
