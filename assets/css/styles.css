@@ -1,8 +1,11 @@
 :root {
-  --colore-primario: #2D2D2A;
-  --colore-secondario: #E63946;
-  --colore-accento: #F1FAEE;
-  --colore-sfondo: #1D3557;
+  --colore-primario: #0D0F1F;
+  --colore-secondario: #1B1F3B;
+  --colore-accento: #00E5FF;
+  --colore-sfondo: #121826;
+  --colore-bottone: #7D2AE8;
+  --colore-hover: #00FFD1;
+  --colore-testo: #E0E6F8;
 }
 
 body {
@@ -10,7 +13,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
   background-color: var(--colore-sfondo);
-  color: var(--colore-primario);
+  color: var(--colore-testo);
 }
 
 /* Navbar */
@@ -18,7 +21,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: var(--colore-primario);
+  background-color: var(--colore-secondario);
   padding: 15px 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -37,14 +40,14 @@ nav ul li {
 }
 
 nav ul li a {
-  color: var(--colore-sfondo);
+  color: var(--colore-accento);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: var(--colore-accento);
+  color: var(--colore-hover);
 }
 
 nav a {
@@ -64,10 +67,10 @@ section {
 
 /* Dark Mode */
 .dark-mode {
-  --colore-primario: #121212;
-  --colore-secondario: #1E1E1E;
-  --colore-sfondo: #252525;
-  --colore-accento: #0DAB76;
+  --colore-primario: #050A1A;
+  --colore-secondario: #0A0F2D;
+  --colore-sfondo: #020511;
+  --colore-accento: #FF00FF;
   color: white;
 }
 
@@ -91,7 +94,7 @@ section {
 }
 
 #theme-toggle:hover {
-  background: #088c61;
+  background: var(--colore-hover);
   transform: scale(1.1);
 }
 
@@ -104,7 +107,7 @@ section {
   justify-content: center;
   text-align: center;
   background: linear-gradient(to right, var(--colore-primario), var(--colore-secondario));
-  color: var(--colore-sfondo);
+  color: var(--colore-accento);
 }
 
 .hero-content {
@@ -119,11 +122,12 @@ section {
   font-size: 1.2rem;
 }
 
+/* Bottoni */
 .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: var(--colore-accento);
+  background-color: var(--colore-bottone);
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -132,7 +136,7 @@ section {
 }
 
 .btn:hover {
-  background-color: #088c61;
+  background-color: var(--colore-hover);
 }
 
 /* Particles effect BG*/
