@@ -1,7 +1,26 @@
-﻿/* Dark Mode */
+﻿/* Dark Mode e reinizializzazione di Vanta.js */
 const themeToggle = document.getElementById("theme-toggle");
+let vantaEffect;
+
+function initVanta() {
+    const isDark = document.body.classList.contains("dark-mode");
+    const bgColor = isDark ? 0x121212 : 0xc8d2db;
+    if (vantaEffect) {
+        vantaEffect.destroy();
+    }
+    vantaEffect = VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        color: isDark ? 0xff4081 : 0x00aaff,
+        backgroundColor: bgColor
+    });
+}
+
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+    initVanta();
 });
 
 /* Typing Hero */
@@ -29,21 +48,7 @@ function typeWriter() {
     }
 }
 
-
-document.addEventListener("DOMContentLoaded", typeWriter);
-
-/* Particles effect BG*/
-document.addEventListener("DOMContentLoaded", function () {
-    particlesJS("particles-js", {
-        particles: {
-            number: { value: 80 },
-            shape: { type: "circle" },
-            size: { value: 3 },
-            move: { speed: 2 },
-            line_linked: { enable: true, opacity: 0.5 },
-        },
-        interactivity: {
-            events: { onhover: { enable: true, mode: "repulse" } },
-        },
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    typeWriter();
+    initVanta();
 });

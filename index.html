@@ -5,90 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Il mio Portfolio da Game Programmer</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Librerie per Vanta.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-  <button id="theme-toggle">🌙</button>
-  
-  <!-- Header -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#contact">Contacts</a></li>
-      </ul>      
-    </nav>
-  </header>
+<button id="theme-toggle">🌙</button>
 
-  <section class="hero">
-    <div id="particles-js"></div>
-      <div class="hero-content">
-        <h1 id="typing-text"></h1>
-        <p>Game Programmer passionate about development and gameplay mechanics.</p>
-        <a href="#projects" class="btn">Check out my projects</a>
-      </div> 
-    
-  </section>
-  
-  <!-- Sezione Home -->
-  <section id="home">
-    <h1>Ciao, sono Matteo Simoni</h1>
-    <p>Game Programmer & Gameplay Enthusiast</p>
-    <!-- Aggiungi un'immagine o un video di presentazione se lo desideri -->
-  </section>
+<!-- Header -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#contact">Contacts</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Sezione Progetti -->
-  <section id="projects">
-    <h2>I miei Progetti</h2>
-    <div class="project-container">
-      <div class="project-card">
-        <img src="assets/img/progetto1-thumbnail.jpg" alt="Progetto 1">
-        <h3>Nome Progetto 1</h3>
-        <p>Breve descrizione del progetto...</p>
-        <a href="link-al-progetto" class="btn">Scopri di più</a>
-      </div>
-
-      <div class="project-card">
-        <img src="assets/img/progetto2-thumbnail.jpg" alt="Progetto 2">
-        <h3>Nome Progetto 2</h3>
-        <p>Breve descrizione del progetto...</p>
-        <a href="link-al-progetto" class="btn">Scopri di più</a>
-      </div>
+<!-- Hero Section -->
+<section class="hero">
+  <!-- Container per l'animazione Vanta -->
+  <div id="vanta-bg"></div>
+  <!-- Contenuto della Hero con overlay per migliorare la leggibilità -->
+  <div class="hero-content">
+    <!-- Contenitore per il testo digitato, posizionato assolutamente -->
+    <div class="typing-container">
+      <h1 id="typing-text"></h1>
     </div>
-  </section>
+    <p>Game Programmer passionate about development and gameplay mechanics.</p>
+    <a href="#projects" class="btn">Check out my projects</a>
+  </div>
+</section>
 
-  <!-- Sezione Chi sono -->
-  <section id="about" class="fade-in">
-    <h2>Chi sono</h2>
-    <p>Breve descrizione della tua formazione, esperienze e passioni legate allo sviluppo di videogiochi.</p>
-    <!-- Potresti includere anche il tuo CV scaricabile -->
-  </section>
+<!-- Sezione Home -->
+<section id="home">
+  <h1>Ciao, sono Matteo Simoni</h1>
+  <p>Game Programmer & Gameplay Enthusiast</p>
+</section>
 
-  <!-- Sezione Contatti -->
-  <section id="contact">
-    <h2>Contact me</h2>
-    <div class="social-icons">
-      <a href="https://github.com/tuo-github" target="_blank">🐙 GitHub</a>
-      <a href="https://www.linkedin.com/in/tuo-linkedin/" target="_blank">💼 LinkedIn</a>
+<!-- Sezione Progetti -->
+<section id="projects">
+  <h2>I miei Progetti</h2>
+  <div class="project-container">
+    <div class="project-card">
+      <img src="assets/img/progetto1-thumbnail.jpg" alt="Progetto 1">
+      <h3>Nome Progetto 1</h3>
+      <p>Breve descrizione del progetto...</p>
+      <a href="link-al-progetto" class="btn">Scopri di più</a>
     </div>
-    <form action="https://formspree.io/f/mjvzwgyd" method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-      <textarea name="message" placeholder="Your message" required></textarea>
-      <button type="submit" class="btn">Invia</button>
-    </form>
-  </section>
+    <div class="project-card">
+      <img src="assets/img/progetto2-thumbnail.jpg" alt="Progetto 2">
+      <h3>Nome Progetto 2</h3>
+      <p>Breve descrizione del progetto...</p>
+      <a href="link-al-progetto" class="btn">Scopri di più</a>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Matteo Simoni. Tutti i diritti riservati.</p>
-  </footer>
+<!-- Sezione Chi sono -->
+<section id="about" class="fade-in">
+  <h2>Chi sono</h2>
+  <p>Breve descrizione della tua formazione, esperienze e passioni legate allo sviluppo di videogiochi.</p>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="assets/js/script.js"></script>
+<!-- Sezione Contatti -->
+<section id="contact">
+  <h2>Contact me</h2>
+  <div class="social-icons">
+    <a href="https://github.com/tuo-github" target="_blank">🐙 GitHub</a>
+    <a href="https://www.linkedin.com/in/tuo-linkedin/" target="_blank">💼 LinkedIn</a>
+  </div>
+  <form action="https://formspree.io/f/mjvzwgyd" method="POST">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" placeholder="Your message" required></textarea>
+    <button type="submit" class="btn">Invia</button>
+  </form>
+</section>
 
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Matteo Simoni. Tutti i diritti riservati.</p>
+</footer>
+
+<script src="assets/js/script.js"></script>
 </body>
 </html>

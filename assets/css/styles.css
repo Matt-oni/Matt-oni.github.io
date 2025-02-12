@@ -1,13 +1,26 @@
 :root {
-  --colore-primario: #0D0F1F;
-  --colore-secondario: #1B1F3B;
-  --colore-accento: #00E5FF;
-  --colore-sfondo: #121826;
-  --colore-bottone: #7D2AE8;
-  --colore-hover: #00FFD1;
-  --colore-testo: #E0E6F8;
+  /* Modalità Base (Light) – Palette moderata per un look videoludico */
+  --colore-sfondo: #c8d2db;      /* Sfondo moderato */
+  --colore-primario: #00394d;    /* Blu navy scuro */
+  --colore-secondario: #004f73;   /* Blu elettrico scuro */
+  --colore-accento: #00aaff;      /* Ciano moderato */
+  --colore-bottone: #00aaff;      /* Bottoni in ciano */
+  --colore-hover: #0088cc;        /* Variante per hover */
+  --colore-testo: #222222;        /* Testo molto scuro */
 }
 
+.dark-mode {
+  /* Dark Mode Overrides */
+  --colore-sfondo: #121212;       /* Sfondo molto scuro */
+  --colore-primario: #0d0f1f;     /* Blu molto scuro */
+  --colore-secondario: #1b1f3b;    /* Blu notte */
+  --colore-accento: #ff4081;       /* Rosa neon */
+  --colore-bottone: #ff4081;       /* Bottoni in rosa neon */
+  --colore-hover: #e040fb;         /* Viola neon */
+  --colore-testo: #e0e0e0;         /* Testo chiaro */
+}
+
+/* Corpo del sito */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -21,7 +34,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: var(--colore-secondario);
+  background-color: var(--colore-primario);
   padding: 15px 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -50,36 +63,29 @@ nav ul li a:hover {
   color: var(--colore-hover);
 }
 
-nav a {
-  color: var(--colore-sfondo);
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: var(--colore-accento);
-}
-
+/* Sezioni */
 section {
   padding: 2rem;
   margin: 0 auto;
   max-width: 1200px;
 }
 
-/* Dark Mode */
-.dark-mode {
-  --colore-primario: #050A1A;
-  --colore-secondario: #0A0F2D;
-  --colore-sfondo: #020511;
-  --colore-accento: #FF00FF;
-  color: white;
+/* Override per la sezione Contatti in dark mode */
+.dark-mode #contact {
+  background-color: #1b1b1b;
+  color: var(--colore-testo);
+}
+.dark-mode #contact h2 {
+  color: var(--colore-accento);
 }
 
+/* Tema Toggle */
 #theme-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  width: 50px;  /* Imposta una larghezza fissa */
-  height: 50px; /* Imposta un'altezza fissa */
+  width: 50px;
+  height: 50px;
   background: var(--colore-accento);
   border: none;
   font-size: 1.2rem;
@@ -98,7 +104,6 @@ section {
   transform: scale(1.1);
 }
 
-
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -108,18 +113,33 @@ section {
   text-align: center;
   background: linear-gradient(to right, var(--colore-primario), var(--colore-secondario));
   color: var(--colore-accento);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Overlay e contenuto della Hero */
 .hero-content {
-  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5); /* Overlay per migliorare la leggibilità */
+  padding: 7rem 1rem 1rem; /* Spazio per il typing text */
+  border-radius: 8px;
+  color: #ffffff;
+  text-align: center;
 }
 
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
+/* Contenitore per il testo digitato */
+.typing-container {
+  /* In desktop, il contenitore è posizionato assolutamente per fissare lo spazio */
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  height: 6rem;  /* Altezza fissa */
+  padding: 0 1rem;
+  text-align: center;
+  white-space: nowrap; /* Mantiene il testo in una riga */
+  overflow: hidden;
 }
 
 /* Bottoni */
@@ -139,20 +159,17 @@ section {
   background-color: var(--colore-hover);
 }
 
-/* Particles effect BG*/
-
-#particles-js {
+/* Container per Vanta.js */
+#vanta-bg {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
-}
-.hero-content {
-  position: relative;
+  top: 0;
+  left: 0;
   z-index: 0;
 }
 
-/* Cursor che blinka alla fine dell'Hero */
+/* Cursor lampeggiante */
 .cursor {
   display: inline-block;
   animation: blink 0.8s infinite;
@@ -185,6 +202,13 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   position: relative;
+  color: var(--colore-testo);
+}
+
+/* In dark mode, modifica anche il background della project card per garantire leggibilità */
+.dark-mode .project-card {
+  background: #1b1f3b;
+  color: var(--colore-testo);
 }
 
 .project-card:hover {
@@ -201,7 +225,6 @@ section {
 .project-card:hover img {
   transform: scale(1.05);
 }
-
 
 /* Sezione Contatti */
 #contact {
@@ -266,4 +289,53 @@ footer {
   color: #fff;
 }
 
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+  /* Navbar: trasforma il menu in una lista verticale */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
 
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Per dispositivi mobili, il container del typing text diventa statico */
+  .typing-container {
+    position: static;
+    height: auto;
+    padding: 0 1rem;
+    white-space: normal; /* Permetti il wrapping */
+    margin-bottom: 1rem;
+  }
+
+  /* Riduci il padding della hero-content per dispositivi mobili */
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}
