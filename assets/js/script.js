@@ -23,28 +23,27 @@ themeToggle.addEventListener("click", () => {
     initVanta();
 });
 
-/* Typing Hero */
-const texts = [
-    "Hello friend, I'm Matteo.",
-    "I'm a passionate Game Programmer.",
-    "I love creating immersive gameplay experiences."
-];
+/* Mobile Menu Toggle */
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
 
-let textIndex = 0;
-let charIndex = 0;
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+/* Typing Hero: Mostra "Hello friend, I'm Matteo." una sola volta */
 const typingElement = document.getElementById("typing-text");
+const typingText = "Hello friend, I'm Matteo.";
+let charIndex = 0;
 
 function typeWriter() {
-    if (charIndex < texts[textIndex].length) {
-        typingElement.innerHTML = texts[textIndex].substring(0, charIndex + 1) + '<span class="cursor">|</span>';
+    if (charIndex < typingText.length) {
+        typingElement.innerHTML = typingText.substring(0, charIndex + 1) + '<span class="cursor">|</span>';
         charIndex++;
         setTimeout(typeWriter, 100);
     } else {
-        setTimeout(() => {
-            charIndex = 0;
-            textIndex = (textIndex + 1) % texts.length;
-            typeWriter();
-        }, 2000);
+        // Mantieni il cursore lampeggiante
+        typingElement.innerHTML = typingText + '<span class="cursor">|</span>';
     }
 }
 

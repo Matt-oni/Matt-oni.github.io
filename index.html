@@ -14,10 +14,11 @@
 
 <button id="theme-toggle">🌙</button>
 
-<!-- Header -->
+<!-- Header con menu hamburger -->
 <header>
   <nav>
-    <ul>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+    <ul id="nav-menu">
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#about">About me</a></li>
@@ -30,14 +31,16 @@
 <section class="hero">
   <!-- Container per l'animazione Vanta -->
   <div id="vanta-bg"></div>
-  <!-- Contenuto della Hero con overlay per migliorare la leggibilità -->
+  <!-- Contenuto della Hero -->
   <div class="hero-content">
-    <!-- Contenitore per il testo digitato, posizionato assolutamente -->
+    <!-- Zona in alto per il typing text -->
     <div class="typing-container">
       <h1 id="typing-text"></h1>
     </div>
-    <p>Game Programmer passionate about development and gameplay mechanics.</p>
-    <a href="#projects" class="btn">Check out my projects</a>
+    <!-- Testo fisso -->
+    <p class="hero-text">I'm a passionate Game Programmer. I love creating immersive gameplay experiences.</p>
+    <!-- Bottone -->
+    <a href="#projects" class="btn hero-btn">Check out my projects</a>
   </div>
 </section>
 
