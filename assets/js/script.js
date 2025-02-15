@@ -42,7 +42,6 @@ function typeWriter() {
         charIndex++;
         setTimeout(typeWriter, 100);
     } else {
-        // Mantieni il cursore lampeggiante
         typingElement.innerHTML = typingText + '<span class="cursor">|</span>';
     }
 }
