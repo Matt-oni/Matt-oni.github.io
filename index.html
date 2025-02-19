@@ -10,9 +10,18 @@
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="dark-mode">
 
-<button id="theme-toggle">🌙</button>
+<!-- Theme Switcher (Toggle) posizionato in alto a destra -->
+<div id="theme-switcher">
+  <input type="checkbox" id="theme-toggle-checkbox">
+  <label for="theme-toggle-checkbox" class="theme-toggle-label">
+      <span class="slider">
+        <span class="sun">🌙</span>
+        <span class="moon">☀️</span>
+      </span>
+  </label>
+</div>
 
 <!-- Header con menu hamburger -->
 <header>
@@ -42,7 +51,7 @@
 <!-- Sezione Home -->
 <section id="home">
   <h1>Welcome to my Portfolio!</h1>
-  <p>I'm Matteo Simoni, I'm a passionate gamer with a background as a developer and IT consultant. Creating and playing indie games is my greatest passion.</p>
+  <p>I'm Matteo Simoni, a passionate gamer with a background as a developer and IT consultant. Creating and playing indie games is my greatest passion.</p>
 </section>
 
 <!-- Sezione Progetti -->
@@ -50,64 +59,55 @@
   <h2>Some of my Projects</h2>
   <div class="project-container">
     <div class="project-card">
-      <!-- Inserisci qui uno screenshot del tuo progetto o una thumbnail che rappresenti il gioco -->
-      <img src="assets/img/TimeToRest_thumbnail.png" alt="Progetto 1">
+      <div class="card-image">
+        <img class="thumbnail" src="assets/img/TimeToRest_thumbnail_3x2.png" alt="Thumbnail Progetto 1">
+        <img class="hover-gif" src="assets/img/progetto1-hover.gif" alt="GIF Progetto 1">
+      </div>
       <h3>Time To Rest</h3>
       <p>A skeleton minion, tired of endless battles, seeks a vacation. <br> He must solve several trials to earn his deserved rest.</p>
       <a href="link-al-progetto" class="btn">See more</a>
     </div>
     <div class="project-card">
-      <!-- Anche qui un'immagine rappresentativa -->
-      <img src="assets/img/GamesBond_thumbnail.png" alt="Progetto 2">
+      <div class="card-image">
+        <img class="thumbnail" src="assets/img/GamesBond_thumbnail_3x2.png" alt="Thumbnail Progetto 2">
+        <img class="hover-gif" src="assets/img/Games_Bond_Walkthrough.gif" alt="GIF Progetto 2">
+      </div>
       <h3>Games Bond</h3>
-      <p>Games Bond is an engaging-gamified experience designed to raise awareness among pre-employment-aged youth about cybersecurity.</p>
+      <p>Games Bond is an engaging gamified experience designed to raise awareness among pre-employment-aged youth about cybersecurity.</p>
       <a href="link-al-progetto" class="btn">See more</a>
     </div>
   </div>
 </section>
 
-<!-- Sezione Chi sono -->
+<!-- Sezione About me -->
 <section id="about" class="fade-in">
   <h2>About me</h2>
-  <p>
-    I am a passionate <b>Game Programmer</b> with a strong background in both <b>game development</b> and <b>software engineering</b>. 
-    With a <b>Technical Diploma in Game Development</b> from <b>ITS Academy "LazioDigital" (graduated with honors)</b>, 
-    I have cultivated a deep understanding of <b>C++ programming, Unreal Engine, and game design principles</b>. 
-    My journey into the gaming industry is driven by an ambition to <b>create innovative and immersive experiences</b>, 
-    combining <b>creativity</b> with <b>technical expertise</b>.
-  </p>
-  <h3>Experience</h3>
-  <p>
-    I have worked as a <b>Game Programming Instructor</b> at <b>Red Hog Studio</b>, where I taught courses on <b>Unreal Engine Basics</b> and 
-    <b>C++ programming</b>, helping aspiring developers build a strong foundation in <b>game development</b>. 
-    Prior to that, I completed a <b>720-hour internship as a Game Developer</b>, where I contributed to an <b>endless runner game</b> 
-    using <b>Unreal Engine 5</b>, implementing <b>core mechanics, AI, and mobile optimization</b>.
-    <br><br>
-    Beyond game development, I have experience as a <b>Full-Stack Developer</b> and <b>Software Engineer</b>, working with <b>Java, 
-    Spring Boot, Angular, Docker, and cloud technologies</b> on <b>enterprise applications</b>.
-  </p>
-  <h3>Skills & Technologies</h3>
-  <p>
-    <b>Game Development:</b> Unreal Engine 5, C++, Blueprints, Unity, C#, Shader Programming<br>
-    <b>Software Engineering:</b> Java, Spring Boot, SQL, Microservices, Docker, Cloud Computing<br>
-    <b>Tools & IDEs:</b> Rider, Visual Studio Code, Git, Jenkins, Kubernetes<br>
-    <b>Game Design & AI:</b> AI behavior scripting, procedural mechanics, game balancing<br>
-  </p>
-  <h3>Passion for Gaming</h3>
-  <p>    
-    I have always been fascinated by <b>video games, not just as a player but as a creator</b>. 
-    My passion lies in <b>experimenting with new gameplay mechanics, AI-driven behaviors, 
-    and procedural systems</b> to enhance player experiences. I thrive in <b>collaborative environments</b>, 
-    where I can <b>push the boundaries</b> of game development and continuously learn new technologies.
-  </p>
+  <div class="about-text">
+    <p>
+      I am a passionate <b>Game Programmer</b> with a strong background in both <b>game development</b> and <b>software engineering</b>.
+      With a <b>Technical Diploma in Game Development</b> from <b>ITS Academy "LazioDigital" (graduated with honors)</b>,
+      I have cultivated a deep understanding of <b>C++ programming, Unreal Engine, and game design principles</b>.
+      My journey into the gaming industry is driven by an ambition to <b>create innovative and immersive experiences</b>,
+      combining <b>creativity</b> with <b>technical expertise</b>.
+      <br><br>
+      I have worked as a <b>Game Programming Instructor</b> at <b>Red Hog Studio</b>, where I taught courses on <b>Unreal Engine Basics</b> and
+      <b>C++ programming</b>, helping aspiring developers build a strong foundation in <b>game development</b>.
+      Prior to that, I completed a <b>720-hour internship as a Game Developer</b>, where I contributed to an <b>endless runner game</b>
+      using <b>Unreal Engine 5</b>, implementing <b>core mechanics, AI, and mobile optimization</b>.
+      <br><br>
+      Beyond game development, I have experience as a <b>Full-Stack Developer</b> and <b>Software Engineer</b>, working with <b>Java,
+      Spring Boot, Angular, Docker, and cloud technologies</b> on <b>enterprise applications</b>.
+    </p>
+  </div>
+  <button id="about-toggle" class="btn about-toggle-btn">See more...</button>
 </section>
 
 <!-- Sezione Contatti -->
 <section id="contact">
   <h2>Contact me</h2>
   <div class="social-icons">
-    <a href="https://tquadro.itch.io/" target="_blank">🎮 itch.io</a>
     <a href="https://www.linkedin.com/in/simoni-matteo/" target="_blank">💼 LinkedIn</a>
+    <a href="https://tquadro.itch.io/" target="_blank">🎮 itch.io</a>
   </div>
   <div class="social-icons">
     <p><a href="mailto:simonimatteo29@gmail.com" target="_blank">📧 Mail me</a></p>

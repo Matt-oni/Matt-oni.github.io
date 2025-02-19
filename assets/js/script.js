@@ -1,5 +1,5 @@
-﻿/* Dark Mode e reinizializzazione di Vanta.js */
-const themeToggle = document.getElementById("theme-toggle");
+﻿/* Dark Mode e Vanta.js */
+const themeToggleCheckbox = document.getElementById("theme-toggle-checkbox");
 let vantaEffect;
 
 function initVanta() {
@@ -18,8 +18,12 @@ function initVanta() {
     });
 }
 
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+themeToggleCheckbox.addEventListener("change", function() {
+    if (this.checked) {
+        document.body.classList.remove("dark-mode");
+    } else {
+        document.body.classList.add("dark-mode");
+    }
     initVanta();
 });
 
@@ -31,7 +35,7 @@ menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
 
-/* Typing Hero: Mostra "Hello friend, I'm Matteo." una sola volta */
+/* Typing Hero */
 const typingElement = document.getElementById("typing-text");
 const typingText = "Hello friend, I'm Matteo.";
 let charIndex = 0;
@@ -46,23 +50,29 @@ function typeWriter() {
     }
 }
 
+/* About Section Toggle */
+const aboutToggle = document.getElementById("about-toggle");
+const aboutTextParagraph = document.querySelector(".about-text p");
+
+if (aboutToggle && aboutTextParagraph) {
+    aboutToggle.addEventListener("click", () => {
+        aboutTextParagraph.classList.toggle("expanded");
+        aboutToggle.innerText = aboutTextParagraph.classList.contains("expanded") ? "See less..." : "See more...";
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     typeWriter();
     initVanta();
 
-    // Fade-in effect: utilizziamo Intersection Observer per aggiungere "show" a .fade-in
+    // Fade-in effect per elementi con classe .fade-in
     const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-        threshold: 0.1
-    };
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    const appearOptions = { threshold: 0.1 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('show');
-                appearOnScroll.unobserve(entry.target);
-            }
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
         });
     }, appearOptions);
     faders.forEach(fader => {
