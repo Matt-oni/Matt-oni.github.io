@@ -1,16 +1,15 @@
 :root {
   /* Modalità Base (Light) – Palette moderata per un look videoludico */
-  --colore-sfondo: #c8d2db;      /* Sfondo moderato */
-  --colore-primario: #00394d;    /* Blu navy scuro */
-  --colore-secondario: #004f73;   /* Blu elettrico scuro */
-  --colore-accento: #00aaff;      /* Ciano moderato */
-  --colore-bottone: #00aaff;      /* Bottoni in ciano */
-  --colore-hover: #0088cc;        /* Variante per hover */
-  --colore-testo: #222222;        /* Testo molto scuro */
+  --colore-sfondo: #c8d2db;
+  --colore-primario: #00394d;
+  --colore-secondario: #004f73;
+  --colore-accento: #00aaff;
+  --colore-bottone: #00aaff;
+  --colore-hover: #0088cc;
+  --colore-testo: #222222;
 }
 
 .dark-mode {
-  /* Dark Mode Overrides */
   --colore-sfondo: #121212;
   --colore-primario: #0d0f1f;
   --colore-secondario: #1b1f3b;
@@ -43,7 +42,6 @@ header {
   justify-content: space-between;
 }
 
-/* Menu Hamburger (visibile solo su mobile) */
 .menu-toggle {
   display: none;
   background: none;
@@ -52,7 +50,6 @@ header {
   color: var(--colore-accento);
 }
 
-/* Navbar menu */
 #nav-menu {
   list-style: none;
   display: flex;
@@ -82,11 +79,11 @@ section {
   max-width: 1200px;
 }
 
-/* Override per la sezione Contatti in dark mode */
 .dark-mode #contact {
   background-color: #1b1b1b;
   color: var(--colore-testo);
 }
+
 .dark-mode #contact h2 {
   color: var(--colore-accento);
 }
@@ -129,7 +126,6 @@ section {
   overflow: hidden;
 }
 
-/* Hero Content per Desktop: layout fisso */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -143,7 +139,7 @@ section {
   overflow: hidden;
 }
 
-/* Per Desktop: posizionamento assoluto degli elementi nella Hero Content */
+/* Desktop: layout con elementi assoluti */
 @media (min-width: 769px) {
   .typing-container {
     position: absolute;
@@ -176,7 +172,7 @@ section {
   }
 }
 
-/* Per Mobile: layout in flow */
+/* Mobile: layout in flow */
 @media (max-width: 768px) {
   .hero-content {
     display: flex;
@@ -211,7 +207,7 @@ section {
   }
 }
 
-/* Container per Vanta.js */
+/* Vanta.js Container */
 #vanta-bg {
   position: absolute;
   width: 100%;
@@ -233,7 +229,6 @@ section {
   border-radius: 5px;
   transition: background 0.3s;
 }
-
 .btn:hover {
   background-color: var(--colore-hover);
 }
@@ -277,7 +272,6 @@ section {
   border-radius: 5px;
   transition: transform 0.3s ease;
 }
-
 .project-card:hover img {
   transform: scale(1.05);
 }
@@ -294,7 +288,6 @@ form {
   max-width: 400px;
   margin: 0 auto;
 }
-
 input, textarea {
   width: 100%;
   padding: 10px;
@@ -302,7 +295,6 @@ input, textarea {
   border: none;
   border-radius: 5px;
 }
-
 button {
   width: 100%;
 }
@@ -311,7 +303,6 @@ button {
 .social-icons {
   margin-bottom: 20px;
 }
-
 .social-icons a {
   display: inline-block;
   margin: 0 10px;
@@ -320,7 +311,6 @@ button {
   color: var(--colore-accento);
   transition: transform 0.3s;
 }
-
 .social-icons a:hover {
   transform: scale(1.2);
 }
@@ -331,7 +321,6 @@ button {
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
@@ -350,7 +339,6 @@ footer {
   .menu-toggle {
     display: block;
   }
-
   #nav-menu {
     display: block;
     max-height: 0;
@@ -362,11 +350,9 @@ footer {
     width: 100%;
     transition: max-height 0.3s ease;
   }
-
   #nav-menu.active {
     max-height: 300px;
   }
-
   #nav-menu li {
     margin: 10px 0;
     text-align: center;
